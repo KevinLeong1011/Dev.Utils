@@ -1,7 +1,45 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFrameworks>net40;net45;netcoreapp2.0</TargetFrameworks>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Kevin Leong</Authors>
+    <Company>Kevin Studio</Company>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net40|AnyCPU'">
+    <DocumentationFile>bin\Debug\net40\Dev.Utils.xml</DocumentationFile>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net40|AnyCPU'">
+    <DocumentationFile>bin\Release\net40\Dev.Utils.xml</DocumentationFile>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net45|AnyCPU'">
+    <DocumentationFile>bin\Debug\net45\Dev.Utils.xml</DocumentationFile>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net45|AnyCPU'">
+    <DocumentationFile>bin\Release\net45\Dev.Utils.xml</DocumentationFile>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netcoreapp2.0|AnyCPU'">
+    <DocumentationFile>bin\Debug\netcoreapp2.0\Dev.Utils.xml</DocumentationFile>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netcoreapp2.0|AnyCPU'">
+    <DocumentationFile>bin\Release\netcoreapp2.0\Dev.Utils.xml</DocumentationFile>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Helpers\WinAPI.cs" />
+    <Compile Remove="WinAPI.cs" />
+  </ItemGroup>
 
 </Project>
